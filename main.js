@@ -31,12 +31,13 @@ const artworks = [];
 let owlGroup;
 
 // --- ART DATA ---
+// Rutas actualizadas para usar imágenes locales desde la carpeta "assets"
 const artData = [
   {
     id: "school-athens",
     title: "La Escuela de Atenas",
     artist: "Rafael Sanzio (1511)",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/640px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg",
+    url: "assets/escuela_atenas.jpg",
     tech: "Fresco verdadero. Colores brillantes y luz racional.",
     comp: "Simetría perfecta. Platón y Aristóteles debaten en el centro.",
     hist: "Ubicada en el Vaticano. Celebra la Verdad Racional.",
@@ -48,7 +49,7 @@ const artData = [
     id: "mona-lisa",
     title: "La Mona Lisa",
     artist: "Leonardo da Vinci (1503)",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+    url: "assets/mona_lisa.jpg",
     tech: 'Óleo sobre tabla. Uso magistral del "Sfumato".',
     comp: "Retrato piramidal de Lisa Gherardini.",
     hist: "La obra más famosa del mundo, exhibida en el Louvre.",
@@ -60,7 +61,7 @@ const artData = [
     id: "david",
     title: "El David",
     artist: "Miguel Ángel (1504)",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/David_von_Michelangelo.jpg/360px-David_von_Michelangelo.jpg",
+    url: "assets/david.jpg",
     tech: "Escultura en mármol de Carrara.",
     comp: "Contrapposto. Muestra tensión mental.",
     hist: "Símbolo de la república florentina.",
@@ -72,7 +73,7 @@ const artData = [
     id: "last-supper",
     title: "La Última Cena",
     artist: "Leonardo da Vinci (1495)",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/%C3%9Altima_Cena_-_Da_Vinci_5.jpg/640px-%C3%9Altima_Cena_-_Da_Vinci_5.jpg",
+    url: "assets/ultima_cena.jpg",
     tech: "Experimental sobre pared seca.",
     comp: "Perspectiva lineal con punto de fuga en Cristo.",
     hist: "Ubicada en Milán.",
@@ -326,7 +327,7 @@ function createEasel(width, height, yCenter) {
 
 function buildArtworks() {
   const textureLoader = new THREE.TextureLoader();
-  textureLoader.setCrossOrigin("anonymous");
+  // Eliminado setCrossOrigin ya que usamos assets locales
 
   artData.forEach((data) => {
     const group = new THREE.Group();
@@ -354,6 +355,7 @@ function buildArtworks() {
     painting.position.z = 0.2;
     group.add(painting);
 
+    // Carga de textura local
     textureLoader.load(
       data.url,
       (texture) => {
