@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Galería Renacentista - Escuela Berta von Glumer</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <meta name="author" content="Marco Escalona" />
+    <meta name="copyright" content="© 2026 Marco Escalona" />
+    <meta name="description" content="Proyecto de desarrollo web creado por Marco Escalona para estudiantes de arte de secundaria de la EBVG. Una experiencia inmersiva en 3D." />
+    <meta name="keywords" content="Marco Escalona, Front-End Developer, Web Developer, Three.js, 3D Web, Educación, Galería Interactiva" />
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="school-logo">EBVG</div>
+
+    <div id="start-screen">
+      <h1>Galería del Renacimiento</h1>
+      <h2>Escuela Berta von Glumer</h2>
+      <p class="instructions">
+        Bienvenido a una experiencia de aprendizaje inmersiva.<br /><br />
+        <b>PC:</b> Usa <b>W, A, S, D</b> para moverte.<br />
+        <b>Móvil:</b> Toca la pantalla para avanzar.<br />
+        Usa el cursor para admirar las obras.<br />
+        Acércate a los caballetes y haz <b>Clic/Tap</b> para que el Profesor
+        Bubo te explique la historia.
+      </p>
+      <button class="btn" id="start-btn">Iniciar Recorrido</button>
+      <p>Por Marco Escalona</p>
+    </div>
+
+    <div id="ui-layer">
+      <div id="crosshair"></div>
+
+      <div id="speech-bubble">
+        <button class="close-bubble" id="close-bubble">&times;</button>
+        <div class="bubble-header">
+          <h3 class="bubble-title" id="bubble-title">Título</h3>
+          <div class="bubble-artist" id="bubble-artist">Artista</div>
+        </div>
+        <div class="bubble-content" id="bubble-text">Contenido...</div>
+      </div>
+    </div>
+
+    <div id="canvas-container"></div>
+    <div id="loading">Construyendo Galería...</div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

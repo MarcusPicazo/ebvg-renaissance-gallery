@@ -1,0 +1,24 @@
+{
+  "name": "galeria-renacentista-ebvg",
+  "version": "1.0.0",
+  "description": "Interactive 3D web experience of a Renaissance Art Gallery.",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "three.js",
+    "3d-gallery",
+    "webgl",
+    "interactive-learning",
+    "frontend-development"
+  ],
+  "author": "Marco Escalona <marcuspicazo@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^11.2.0"
+  }
+}
